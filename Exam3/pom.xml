@@ -67,7 +67,7 @@
         </pluginManagement>
 
         <sourceDirectory>src/main/java</sourceDirectory>
-        <finalName>Exam3</finalName><!--你的jar文件的名字-->
+        <finalName>Exam3</finalName><!--jar文件名-->
 
         <plugins>
             <plugin>
@@ -94,5 +94,6 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
 </project>
