@@ -4,6 +4,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.File;
@@ -15,7 +16,7 @@ public class App1 {
         download("http://192.168.11.205:18080/trainning/SampleChapter1.pdf","Exam1/tmp/SampleChapter1.pdf");
     }
 
-    public static void download(String url, String filepath) {
+    static void download(String url, String filepath) {
         try {
             HttpClient client = HttpClients.createDefault();//new DefaultHttpClient();
             HttpGet httpget = new HttpGet(url);
@@ -34,6 +35,7 @@ public class App1 {
                 fos.write(buffer, 0, ch);
             }
             System.out.println("文件下载成功。");
+            System.getProperty("java.classpath");
             is.close();
             fos.flush();
             fos.close();
