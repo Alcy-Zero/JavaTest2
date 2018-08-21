@@ -6,20 +6,17 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
-class MySocketServer extends Thread
-{
+class MySocketServer extends Thread {
     private ServerSocket serverSocket;
 
-    MySocketServer(int port) throws IOException
-    {
+    MySocketServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         serverSocket.setSoTimeout(60000);
     }
 
     @Override
-    public void run()
-    {
-        while(true)
+    public void run() {
+        while (true)
             try {
                 System.out.println("Waiting for client on port " +
                         serverSocket.getLocalPort() + "...");
@@ -34,7 +31,7 @@ class MySocketServer extends Thread
                 BufferedOutputStream bos = new BufferedOutputStream(os);
 
                 byte[] b = new byte[10000];
-                while ((fis.read(b))!=-1) {
+                while ((fis.read(b)) != -1) {
                     bos.write(b);
                 }
                 bos.flush();

@@ -6,12 +6,10 @@ import java.net.Socket;
 public class MySocket extends Thread {
     @Override
 
-    public void run()
-    {
+    public void run() {
         String serverName = "localhost";
         int port = 8080;
-        try
-        {
+        try {
             System.out.println("Connecting to " + serverName + " on port " + port);
             Socket client = new Socket(serverName, port);
             System.out.println("Just connected to " + client.getRemoteSocketAddress());
@@ -23,7 +21,7 @@ public class MySocket extends Thread {
             BufferedInputStream bis = new BufferedInputStream(is);
 
             byte[] b = new byte[10000];
-            while ((bis.read(b)!=-1)) {
+            while ((bis.read(b) != -1)) {
                 fos.write(b);
             }
             fos.flush();
@@ -34,8 +32,7 @@ public class MySocket extends Thread {
 
             client.close();
 
-        } catch(IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

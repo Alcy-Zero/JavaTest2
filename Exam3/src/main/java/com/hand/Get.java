@@ -17,14 +17,14 @@ class Get {
         this.num = num;
     }
 
-    String getInfo(){
+    String getInfo() {
 
         HttpGet get = new HttpGet("http://hq.sinajs.cn/list=" + num);
         String result = null;
         try {
             HttpResponse response = client.execute(get);
             HttpEntity entity = response.getEntity();
-            result = EntityUtils.toString(entity,"UTF-8");
+            result = EntityUtils.toString(entity, "UTF-8");
         } catch (IOException e) {
             e.printStackTrace();
         }

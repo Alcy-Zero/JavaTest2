@@ -13,7 +13,7 @@ import java.io.InputStream;
 
 public class App1 {
     public static void main(String[] args) {
-        download("http://192.168.11.205:18080/trainning/SampleChapter1.pdf","Exam1/tmp/SampleChapter1.pdf");
+        download("http://192.168.11.205:18080/trainning/SampleChapter1.pdf", "Exam1/tmp/SampleChapter1.pdf");
     }
 
     static void download(String url, String filepath) {

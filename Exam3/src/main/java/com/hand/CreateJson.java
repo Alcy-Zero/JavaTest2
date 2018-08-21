@@ -1,11 +1,13 @@
 package com.hand;
 
 import com.google.gson.JsonObject;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class CreateJson extends Thread{
+public class CreateJson extends Thread {
     private String result;
+
     CreateJson(String result) {
         this.result = result;
     }
@@ -20,12 +22,12 @@ public class CreateJson extends Thread{
         ss[0] = ssx[1];
 
         JsonObject jo = new JsonObject();
-        jo.addProperty("name",ss[0]);
-        jo.addProperty("open",ss[1]);
-        jo.addProperty("close",ss[2]);
-        jo.addProperty("current",ss[3]);
-        jo.addProperty("high",ss[4]);
-        jo.addProperty("low",ss[5]);
+        jo.addProperty("name", ss[0]);
+        jo.addProperty("open", ss[1]);
+        jo.addProperty("close", ss[2]);
+        jo.addProperty("current", ss[3]);
+        jo.addProperty("high", ss[4]);
+        jo.addProperty("low", ss[5]);
 
         try {
             FileOutputStream fos = new FileOutputStream("Exam3/tmp/股票编码.json");
